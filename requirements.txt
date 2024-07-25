@@ -6,4 +6,5 @@ shap==0.46.0
 protobuf==3.20.3  # Compatible version with Streamlit
 altair==4.2.2  # Compatible version with Streamlit
 click==8.0.0
-imblearn
+imbalanced-learn==0.10.1
+scikit-learn==1.2.2
