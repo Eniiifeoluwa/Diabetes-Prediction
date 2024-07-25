@@ -34,11 +34,11 @@ smote = SMOTE(random_state=42)
 X_resampled, Y_resampled = smote.fit_resample(X_train, Y_train)
 
 
-# Load the trained model
+
 model = load_model("diabetes_model.h5")
 
 
-# Define feature columns
+
 feature_columns = ['age', 'hypertension', 'heart_disease', 'bmi', 'HbA1c_level', 'blood_glucose_level',
                    'smoking_history_never smoked', 'smoking_history_smoked before', 'smoking_history_smoking',
                    'gender_female', 'gender_male']
@@ -77,13 +77,11 @@ new_data = pd.DataFrame({
     'gender_male': [gender_male],
 })
 
-# Normalize the data using MinMaxScaler (fit on training data)
-# Assuming you have saved the scaler used during training
+
 
 new_data_scaled = scaler.transform(new_data)
 
-# Make predictions
-# Add a button to trigger prediction
+
 if st.button("Predict"):
     # Make predictions
     predictions = model.predict(new_data_scaled)
@@ -105,7 +103,6 @@ if st.button("Predict"):
         st.write("- Regular health check-ups are recommended.")
         st.write("- Continue monitoring your health indicators.")
 
-    # Add more detailed explanations if needed
     st.write("### Explanation:")
     st.write("The model predicts the probability of diabetes based on your input features. "
              "A probability greater than 0.5 indicates a higher likelihood of diabetes.")
