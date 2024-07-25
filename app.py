@@ -79,8 +79,7 @@ new_data = pd.DataFrame({
 
 # Normalize the data using MinMaxScaler (fit on training data)
 # Assuming you have saved the scaler used during training
-scaler = MinMaxScaler() 
-scaler.fit(X)
+
 new_data_scaled = scaler.transform(new_data)
 
 # Make predictions
